@@ -1,10 +1,14 @@
 
-import { workspace, window, ExtensionContext, commands } from 'vscode';
+import { ExtensionContext, commands } from 'vscode';
+import { Terminal } from "./terminal";
+import { Process } from "./process";
+
+let { registerCommand } = commands;
 
 export function activate(context: ExtensionContext) {
-
-
+	let terminal = new Terminal(context);
+	let process = new Process();
+	process.init(context);
 }
 
-// this method is called when your extension is deactivated
 export function deactivate() { }
