@@ -3,6 +3,7 @@
   "displayName": "vscode-xhonker",
   "description": "tools",
   "version": "0.0.7",
+  "publisher": "vsQuicker",
   "engines": {
     "vscode": "^1.35.0"
   },
