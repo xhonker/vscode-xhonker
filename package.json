@@ -2,7 +2,7 @@
   "name": "xhonker",
   "displayName": "Xhonker",
   "description": "tools",
-  "version": "0.0.10",
+  "version": "0.0.1",
   "publisher": "vsQuicker",
   "engines": {
     "vscode": "^1.35.0"
