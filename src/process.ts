@@ -6,7 +6,6 @@ import { IProcess } from "./interface";
 const { registerCommand } = commands;
 const { showInputBox } = window;
 const { getConfiguration } = workspace;
-const config = getConfiguration('xhonker');
 
 interface IPort {
   pid: string;
@@ -45,6 +44,8 @@ export class Process implements IProcess {
       }
       if (!ports.length) { return; }
 
+      const config = getConfiguration('xhonker');
+      
       let killType = config.get('killType');
       let killCommand = config.get('killCommand');
       ports.forEach(({ pid, type }) => {

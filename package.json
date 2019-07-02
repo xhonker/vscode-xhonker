@@ -13,6 +13,14 @@
   "activationEvents": [
     "*"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xhonker/vscode-xhonker"
+  },
+  "bugs": {
+    "email": "wu_xhonker@hotmail.com",
+    "url": "https://github.com/xhonker/vscode-xhonker/issues"
+  },
   "main": "./out/extension.js",
   "icon": "assets/logo.png",
   "contributes": {
