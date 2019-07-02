@@ -1,14 +1,13 @@
 
-import { ExtensionContext, commands } from 'vscode';
+import { ExtensionContext, workspace } from 'vscode';
 import { Terminal } from "./terminal";
 import { Process } from "./process";
-
-let { registerCommand } = commands;
+import { Project } from "./project";
 
 export function activate(context: ExtensionContext) {
-	let terminal = new Terminal(context);
-	let process = new Process();
-	process.init(context);
+	new Terminal(context);
+	new Process(context);
+	new Project(context);
 }
 
 export function deactivate() { }

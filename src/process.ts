@@ -1,7 +1,8 @@
 import { ExtensionContext, commands, window, workspace } from "vscode";
 import { execCommand } from "./node";
 import { outputLog } from './outputChannel';
-import { ICommand, IProcess } from "./interface";
+import { IProcess } from "./interface";
+
 const { registerCommand } = commands;
 const { showInputBox } = window;
 const { getConfiguration } = workspace;
@@ -12,20 +13,20 @@ interface IPort {
   type: string;
 }
 
-export class Process implements ICommand, IProcess {
-  init(ctx: ExtensionContext): void {
+export class Process implements IProcess {
+  constructor(ctx: ExtensionContext) {
     let kill = registerCommand("xhonker.process.kill", () => this.killProcess());
     let portToPid = registerCommand('xhonker.process.killNode', () => this.killPort());
     ctx.subscriptions.push(kill);
     ctx.subscriptions.push(portToPid);
   }
   private async killProcess() {
-    let result = await showInputBox({ placeHolder: "type in pid" });
+    let result = await showInputBox({ placeHolder: "enter the pid" });
     if (!result) { return; }
     execCommand(`kill -9 ${result!}`);
   }
   async killPort() {
-    let result = await showInputBox({ placeHolder: "type in port" });
+    let result = await showInputBox({ placeHolder: "enter the port" });
     if (!result) { return; }
     execCommand(`lsof -i:${result}`, (err: any, stdout: string) => {
       if (err) {

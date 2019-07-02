@@ -1,7 +1,7 @@
 {
   "name": "xhonker",
-  "displayName": "Xhonker",
-  "description": "tools",
+  "displayName": "Tools",
+  "description": "private tools",
   "version": "0.0.2",
   "publisher": "vsQuicker",
   "engines": {
@@ -31,6 +31,11 @@
         "command": "xhonker.process.killNode",
         "title": "killNode",
         "category": "xhonker"
+      },
+      {
+        "command": "xhonker.project.create",
+        "title": "create page",
+        "category": "xhonker"
       }
     ],
     "configuration": [
@@ -44,6 +49,18 @@
           "xhonker.killCommand": {
             "default": "kill -9",
             "type": "string"
+          },
+          "xhonker.createPage": {
+            "default": "yarn create-page -t",
+            "type": "string"
+          },
+          "xhonker.pageType": {
+            "default": [
+              "h5",
+              "hybrid",
+              "pc"
+            ],
+            "type": "array"
           }
         }
       }

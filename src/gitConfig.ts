@@ -5,4 +5,4 @@ export default {
   "xhonker.git.cd": "git checkout develop",
   "xhonker.git.cb": "git checkout -b "
 
-}
+};
